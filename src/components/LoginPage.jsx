@@ -4,12 +4,16 @@ import InputField from "./InputField";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
+import { useNavigate } from "react-router";
+import { propTypes } from "react-bootstrap/esm/Image";
 
-function LoginPage() {
+function LoginPage({ handleSubmitLogin, ...props }) {
   const [user, setUser] = useState({
     name: "",
     deviceId: "",
   });
+
+  let navigate = useNavigate();
 
   function handleFormChange(e) {
     setUser({
@@ -18,8 +22,18 @@ function LoginPage() {
     });
   }
 
-  function handleSubmitForm() {
-    console.log("Submit... Logging in!");
+  function clearForm() {
+    setUser({
+      name: "",
+      deviceId: "",
+    });
+  }
+
+  function handleSubmitForm(e) {
+    e.preventDefault();
+    handleSubmitLogin(user);
+    clearForm();
+    navigate("/bags", { replace: true });
   }
 
   return (

@@ -44,3 +44,32 @@
 .headerFont {
   color: white;
 }
+
+.Current {
+  color: rgb(252, 3, 28) !important;
+}
+
+th {
+  background-color: white !important;
+}
+
+tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}
+
+.hidden-table:hover {
+  background-color: white !important;
+}
+
+.notSelected:hover {
+  background-color: inherit;
+}
+
+.table-hover tbody tr:hover td {
+  /* background: rgba(255, 255, 255, 0); */
+  /* background: rgba(255, 0, 0, 0) Important; */
+}

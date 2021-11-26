@@ -1,62 +1,82 @@
-import './App.css';
-import {useState} from 'react';
-import Header from './components/Header';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import AddBagPage from './components/AddBagPage';
-import {Routes, Route} from 'react-router-dom';
-import BagDisplayPage from './components/BagDisplayPage';
-import Home from './components/Home';
-import Login from './components/LoginPage';
+import "./App.css";
+import { useEffect, useState } from "react";
+import Header from "./components/Header";
+import "bootstrap/dist/css/bootstrap.min.css";
+import AddBagPage from "./components/AddBagPage";
+import { Routes, Route } from "react-router-dom";
+import BagDisplayPage from "./components/BagDisplayPage";
+import Home from "./components/Home";
+import Login from "./components/LoginPage";
+import { useNavigate } from "react-router-dom";
+import mockData from "./components/mockData";
+import { NavItem } from "react-bootstrap";
 
 function App() {
+  let navigate = useNavigate();
 
-  const [bags, setBags] = useState([]);
-  const [currentUser, setCurrentUser] = useState({
+  const [bags, setBags] = useState(mockData);
+  const [isLoggedIn, setLoggedIn] = useState(false);
+
+  const [user, setUser] = useState({
     name: "",
-    deviceId: ""
+    deviceId: "",
   });
 
-  const [formFields, setFormFields] = useState({
-    bagId: "",
-    source: "",
-    location: "",
-    destination: "",
-  });
-
-  function handleFormChange(e) {
-    let value = e.target.value;
-    let name = e.target.name;
-    // console.log("name", name, "value", value);
-
-    setFormFields({
+  function addBag(formFields) {
+    const newBag = {
       ...formFields,
-      [name]: value,
+      currentTask: false,
+      completed: false,
+    };
+    setBags([...bags, newBag]);
+  }
+
+  useEffect(() => {
+    console.log(bags);
+  }, [bags]);
+
+  function selectBag(id) {
+    console.log("Selecting! ", id);
+    setBags(
+      bags.map((bag) =>
+        bag.bagId === id ? { ...bag, currentTask: true } : bag
+      )
+    );
+  }
+
+  function handleSubmitLogin(newUser) {
+    setUser(newUser);
+    setLoggedIn(true);
+    console.log(newUser);
+    console.log(user);
+  }
+
+  function handleLogOut() {
+    setLoggedIn(false);
+    setUser({
+      name: "",
+      deviceId: "",
     });
+    navigate("/login", { replace: true });
   }
-
-  function addBag(){
-    setBags([...bags, formFields]);
-  }
-
-
 
   return (
     <div>
-      <Header/>
+      <Header user={user} loggedIn={isLoggedIn} handleLogOut={handleLogOut} />
       <Routes>
-        <Route path="/" element={<Home/>}>
-        </Route>
-        <Route path="/login" element={<Login/>}>
-        </Route>
-        <Route path="bags" element={<BagDisplayPage bags={bags}/>}>
-        </Route>
-        <Route path="/addbag" element={<AddBagPage
-          addBag={addBag}
-          handleFormChange={handleFormChange}
-          formFields={formFields}
-          setFormFields={setFormFields}
-          bags={bags}
-        />}></Route>
+        <Route path="/" element={<Home />}></Route>
+        <Route
+          path="/login"
+          element={<Login handleSubmitLogin={handleSubmitLogin} />}
+        ></Route>
+        <Route
+          path="bags"
+          element={<BagDisplayPage selectBag={selectBag} bags={bags} />}
+        ></Route>
+        <Route
+          path="/addbag"
+          element={<AddBagPage addBag={addBag} bags={bags} />}
+        ></Route>
       </Routes>
     </div>
   );

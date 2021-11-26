@@ -10,12 +10,7 @@ function AddBagPage({
 }) {
   return (
     <div>
-      <AddBagForm
-        addBag={addBag}
-        handleFormChange={handleFormChange}
-        formFields={formFields}
-        setFormFields={setFormFields}
-      />
+      <AddBagForm addBag={addBag} />
       <BagDisplay bags={bags} />
     </div>
   );

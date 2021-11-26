@@ -3,8 +3,26 @@ import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import ThreeColumnLayout from "../Layout/ThreeColumnLayout";
 import InputField from "./InputField";
+import { useState } from "react";
 
-function AddBagForm({ formFields, setFormFields, handleFormChange, addBag }) {
+function AddBagForm({ addBag }) {
+  const [formFields, setFormFields] = useState({
+    bagId: "",
+    source: "",
+    location: "",
+    destination: "",
+  });
+
+  function handleFormChange(e) {
+    let value = e.target.value;
+    let name = e.target.name;
+
+    setFormFields({
+      ...formFields,
+      [name]: value,
+    });
+  }
+
   function clearForm() {
     setFormFields({
       bagId: "",
@@ -16,7 +34,7 @@ function AddBagForm({ formFields, setFormFields, handleFormChange, addBag }) {
 
   function submitBagForm(e) {
     e.preventDefault();
-    addBag();
+    addBag(formFields);
     clearForm();
   }
 

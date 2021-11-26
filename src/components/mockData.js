@@ -1,0 +1,60 @@
+const mockData = [
+  {
+    bagId: "1",
+    source: "EWR",
+    location: "Location 1",
+    destination: "LAX",
+    currentTask: false,
+    completed: false,
+  },
+  {
+    bagId: "2",
+    source: "ANC",
+    location: "Location 2",
+    destination: "SEA",
+    currentTask: false,
+    completed: false,
+  },
+  {
+    bagId: "3",
+    source: "EWR",
+    location: "Location 3",
+    destination: "LAX",
+    currentTask: false,
+    completed: false,
+  },
+  {
+    bagId: "4",
+    source: "ORD",
+    location: "Location 4 ",
+    destination: "SFO",
+    currentTask: false,
+    completed: false,
+  },
+  {
+    bagId: "5",
+    source: "OAK",
+    location: "Location 5 ",
+    destination: "LAX",
+    currentTask: false,
+    completed: false,
+  },
+  {
+    bagId: "6",
+    source: "MDW",
+    location: "Location 6 ",
+    destination: "EWR",
+    currentTask: false,
+    completed: false,
+  },
+  {
+    bagId: "7",
+    source: "BUR",
+    location: "Location 7 ",
+    destination: "PSP",
+    currentTask: false,
+    completed: false,
+  },
+];
+
+export default mockData;
