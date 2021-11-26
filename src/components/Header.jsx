@@ -26,12 +26,20 @@ function Header() {
                 Home
               </Nav.Link>
             </NavItem>
+
+            <NavItem eventkey={4} href="/login">
+              <Nav.Link as={Link} to="/login">
+                Login
+              </Nav.Link>
+            </NavItem>
+
             <NavItem eventkey={2} href="/bags">
               <Nav.Link as={Link} to="/bags">
                 Bags
               </Nav.Link>
             </NavItem>
-            <NavItem eventkey={1} href="/addbag">
+
+            <NavItem eventkey={3} href="/addbag">
               <Nav.Link as={Link} to="/addbag">
                 Add Bag
               </Nav.Link>

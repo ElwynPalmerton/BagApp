@@ -6,10 +6,15 @@ import AddBagPage from './components/AddBagPage';
 import {Routes, Route} from 'react-router-dom';
 import BagDisplayPage from './components/BagDisplayPage';
 import Home from './components/Home';
+import Login from './components/LoginPage';
 
 function App() {
 
   const [bags, setBags] = useState([]);
+  const [currentUser, setCurrentUser] = useState({
+    name: "",
+    deviceId: ""
+  });
 
   const [formFields, setFormFields] = useState({
     bagId: "",
@@ -27,13 +32,13 @@ function App() {
       ...formFields,
       [name]: value,
     });
-
-    // console.log(formFields);
   }
 
   function addBag(){
     setBags([...bags, formFields]);
   }
+
+
 
   return (
     <div>
@@ -41,8 +46,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}>
         </Route>
-        {/* <Route path="/login" element={<Login/>}>
-        </Route> */}
+        <Route path="/login" element={<Login/>}>
+        </Route>
         <Route path="bags" element={<BagDisplayPage bags={bags}/>}>
         </Route>
         <Route path="/addbag" element={<AddBagPage
