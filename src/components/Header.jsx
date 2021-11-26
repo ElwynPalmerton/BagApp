@@ -15,7 +15,7 @@ function Header() {
               height="30"
               className="d-inline-block align-top"
             />{" "} */}
-            United Bag App
+            UAL Uber POC
           </Navbar.Brand>
         </Container>
       </Navbar>

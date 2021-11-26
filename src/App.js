@@ -1,10 +1,9 @@
 import './App.css';
 import {useState} from 'react';
-import AddBagForm from './components/AddBagForm';
 import Header from './components/Header';
-import BagDisplay from './components/BagDisplay';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddBagPage from './components/AddBagPage';
+import {Routes, Route, Link} from 'react-router-dom';
 
 function App() {
 
@@ -37,13 +36,22 @@ function App() {
   return (
     <div>
     <Header/>
-    <AddBagPage
+    <Routes>
+      <Route path="/" element={<AddBagPage
       addBag={addBag}
       handleFormChange={handleFormChange}
       formFields={formFields}
       setFormFields={setFormFields}
       bags={bags}
-    />
+    />}></Route>
+    </Routes>
+    {/* // <AddBagPage */}
+    {/* //   addBag={addBag}
+    //   handleFormChange={handleFormChange}
+    //   formFields={formFields}
+    //   setFormFields={setFormFields}
+    //   bags={bags}
+    // /> */}
     
     </div>
 
