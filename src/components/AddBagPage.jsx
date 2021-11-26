@@ -1,4 +1,3 @@
-import react from "react";
 import AddBagForm from "./AddBagForm";
 import BagDisplay from "./BagDisplay";
 

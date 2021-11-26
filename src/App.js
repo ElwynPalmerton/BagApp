@@ -3,7 +3,9 @@ import {useState} from 'react';
 import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddBagPage from './components/AddBagPage';
-import {Routes, Route, Link} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
+import BagDisplayPage from './components/BagDisplayPage';
+import Home from './components/Home';
 
 function App() {
 
@@ -35,26 +37,23 @@ function App() {
 
   return (
     <div>
-    <Header/>
-    <Routes>
-      <Route path="/" element={<AddBagPage
-      addBag={addBag}
-      handleFormChange={handleFormChange}
-      formFields={formFields}
-      setFormFields={setFormFields}
-      bags={bags}
-    />}></Route>
-    </Routes>
-    {/* // <AddBagPage */}
-    {/* //   addBag={addBag}
-    //   handleFormChange={handleFormChange}
-    //   formFields={formFields}
-    //   setFormFields={setFormFields}
-    //   bags={bags}
-    // /> */}
-    
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Home/>}>
+        </Route>
+        {/* <Route path="/login" element={<Login/>}>
+        </Route> */}
+        <Route path="bags" element={<BagDisplayPage bags={bags}/>}>
+        </Route>
+        <Route path="/addbag" element={<AddBagPage
+          addBag={addBag}
+          handleFormChange={handleFormChange}
+          formFields={formFields}
+          setFormFields={setFormFields}
+          bags={bags}
+        />}></Route>
+      </Routes>
     </div>
-
   );
 }
 

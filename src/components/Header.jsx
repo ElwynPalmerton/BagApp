@@ -1,5 +1,7 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
+import { Link } from "react-router-dom";
+import { Nav, NavItem } from "react-bootstrap";
 
 function Header() {
   return (
@@ -17,6 +19,24 @@ function Header() {
             />{" "} */}
             UAL Uber POC
           </Navbar.Brand>
+
+          <Nav className="me-auto">
+            <NavItem eventkey={1} href="/">
+              <Nav.Link as={Link} to="/">
+                Home
+              </Nav.Link>
+            </NavItem>
+            <NavItem eventkey={2} href="/bags">
+              <Nav.Link as={Link} to="/bags">
+                Bags
+              </Nav.Link>
+            </NavItem>
+            <NavItem eventkey={1} href="/addbag">
+              <Nav.Link as={Link} to="/addbag">
+                Add Bag
+              </Nav.Link>
+            </NavItem>
+          </Nav>
         </Container>
       </Navbar>
       <br />

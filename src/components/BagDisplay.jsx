@@ -26,7 +26,7 @@ function BagDisplay({ bags }) {
               <tbody>
                 {bags.map((bag, i) => {
                   return (
-                    <tr>
+                    <tr key={i}>
                       <td>{bag.bagId}</td>
                       <td>{bag.source}</td>
                       <td>{bag.location}</td>
