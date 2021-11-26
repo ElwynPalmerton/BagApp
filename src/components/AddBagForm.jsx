@@ -5,17 +5,12 @@ import Row from "react-bootstrap/Row";
 import { Col } from "react-bootstrap";
 import ThreeColumnLayout from "../Layout/ThreeColumnLayout";
 
-function AddBagForm({
-  formFields,
-  setFormFields,
-  handleFormChange,
-  bagFormSubmit,
-}) {
+function AddBagForm({ formFields, setFormFields, handleFormChange, addBag }) {
   function submitBagForm(e) {
     console.log(e);
     e.preventDefault();
     console.log("Submitting form: ", formFields);
-    bagFormSubmit();
+    addBag();
   }
 
   return (

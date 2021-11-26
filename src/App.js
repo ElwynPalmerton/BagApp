@@ -4,6 +4,7 @@ import AddBagForm from './components/AddBagForm';
 import Header from './components/Header';
 import BagDisplay from './components/BagDisplay';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AddBagPage from './components/AddBagPage';
 
 function App() {
 
@@ -29,27 +30,21 @@ function App() {
     // console.log(formFields);
   }
 
-  function handleSubmitBagForm(){
-    // e.preventdefault();
+  function addBag(){
     setBags([...bags, formFields]);
-    // console.log("Hello from App");
-    // console.log(formFields);
-    
-    // console.log(bags);
   }
 
   return (
     <div>
-      <Header/>
-    <AddBagForm
-      bagFormSubmit={handleSubmitBagForm}
+    <Header/>
+    <AddBagPage
+      addBag={addBag}
       handleFormChange={handleFormChange}
       formFields={formFields}
       setFormFields={setFormFields}
-    />
-    <BagDisplay
       bags={bags}
     />
+    
     </div>
 
   );
