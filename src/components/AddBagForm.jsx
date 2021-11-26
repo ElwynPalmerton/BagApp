@@ -6,11 +6,19 @@ import { Col } from "react-bootstrap";
 import ThreeColumnLayout from "../Layout/ThreeColumnLayout";
 
 function AddBagForm({ formFields, setFormFields, handleFormChange, addBag }) {
+  function clearForm() {
+    setFormFields({
+      bagId: "",
+      source: "",
+      location: "",
+      destination: "",
+    });
+  }
+
   function submitBagForm(e) {
-    console.log(e);
     e.preventDefault();
-    console.log("Submitting form: ", formFields);
     addBag();
+    clearForm();
   }
 
   return (
