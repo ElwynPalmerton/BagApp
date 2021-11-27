@@ -2,9 +2,9 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
-import AddBagPage from "./components/AddBagPage";
+import AddBagPage from "./components/AddBag/AddBagPage";
 import { Routes, Route } from "react-router-dom";
-import BagDisplayPage from "./components/BagDisplayPage";
+import BagDisplayPage from "./components/ShowBags/BagDisplayPage";
 import Home from "./components/Home";
 import Login from "./components/LoginPage";
 import { useNavigate } from "react-router-dom";
@@ -34,7 +34,7 @@ function App() {
     // console.log(bags);
   }, [bags]);
 
-  function selectBag(id) {
+  function pickupBag(id) {
     setBags(
       bags.map((bag) =>
         bag.bagId === id ? { ...bag, currentTask: true } : bag
@@ -42,11 +42,14 @@ function App() {
     );
   }
 
+  function completeTask(id) {
+    // Change the completed field on the bag with bagId === id.
+    // Pass this down to BagDisplayPage then to SelectedBagForm.
+  }
+
   function handleSubmitLogin(newUser) {
     setUser(newUser);
     setLoggedIn(true);
-    console.log(newUser);
-    console.log(user);
   }
 
   function handleLogOut() {
@@ -69,7 +72,7 @@ function App() {
         ></Route>
         <Route
           path="bags"
-          element={<BagDisplayPage selectBag={selectBag} bags={bags} />}
+          element={<BagDisplayPage pickupBag={pickupBag} bags={bags} />}
         ></Route>
         <Route
           path="/addbag"
