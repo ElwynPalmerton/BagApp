@@ -3,7 +3,7 @@ import BagTable from "./BagTable";
 import TwoColumnLayout from "../../Layout/TwoColumnLayout";
 import SelectedBagForm from "./SelectedBagForm";
 
-function BagDisplayPage({ bags, pickupBag, addBag }) {
+function BagDisplayPage({ bags, pickupBag, addBag, deliverBag }) {
   const [selectedBag, setSelectedBag] = useState();
   const [currentBag, setCurrentBag] = useState();
 
@@ -35,6 +35,7 @@ function BagDisplayPage({ bags, pickupBag, addBag }) {
           selectedBag={selectedBag}
           pickupBag={pickupBag}
           closeForm={closeForm}
+          deliverBag={deliverBag}
         />
       }
     />

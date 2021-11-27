@@ -42,9 +42,13 @@ function App() {
     );
   }
 
-  function completeTask(id) {
-    // Change the completed field on the bag with bagId === id.
-    // Pass this down to BagDisplayPage then to SelectedBagForm.
+  function deliverBag(id) {
+    console.log("delivering bag#: ", id);
+    setBags(
+      bags.map((bag) =>
+        bag.bagId === id ? { ...bag, currentTask: false, completed: true } : bag
+      )
+    );
   }
 
   function handleSubmitLogin(newUser) {
@@ -72,7 +76,13 @@ function App() {
         ></Route>
         <Route
           path="bags"
-          element={<BagDisplayPage pickupBag={pickupBag} bags={bags} />}
+          element={
+            <BagDisplayPage
+              pickupBag={pickupBag}
+              deliverBag={deliverBag}
+              bags={bags}
+            />
+          }
         ></Route>
         <Route
           path="/addbag"

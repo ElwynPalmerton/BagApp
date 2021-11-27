@@ -6,7 +6,7 @@ import { ButtonGroup } from "react-bootstrap";
 import { Stack, ListGroup } from "react-bootstrap";
 import { useEffect } from "react";
 
-function SelectedBagForm({ selectedBag, pickupBag, closeForm }) {
+function SelectedBagForm({ selectedBag, pickupBag, closeForm, deliverBag }) {
   // The function to selected the current bag needs to be passed down to this.
   //FROM: BagDisplayPage (app.js doesn't need to know this.)
   // The method to complete a task needs to be written in app and passed down to here.
@@ -33,7 +33,7 @@ function SelectedBagForm({ selectedBag, pickupBag, closeForm }) {
           <Card style={{ width: "18rem" }}>
             {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
             <Card.Body>
-              <Card.Title>Bag Tag: {selectedBag.bagId}</Card.Title>
+              <Card.Title>Tag#: {selectedBag.bagId}</Card.Title>
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   Location: {selectedBag.location}
@@ -53,7 +53,13 @@ function SelectedBagForm({ selectedBag, pickupBag, closeForm }) {
                   >
                     Add
                   </Button>
-                  <Button variant="light" type="submit">
+                  <Button
+                    onClick={() => {
+                      deliverBag(selectedBag.bagId);
+                    }}
+                    variant="light"
+                    type="submit"
+                  >
                     Deliver
                   </Button>
                   <Button

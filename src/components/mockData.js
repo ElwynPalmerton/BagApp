@@ -2,7 +2,7 @@ const mockData = [
   {
     bagId: "1",
     source: "EWR",
-    location: "Location 1",
+    location: "Terminal 3",
     destination: "LAX",
     currentTask: false,
     completed: false,
@@ -10,7 +10,7 @@ const mockData = [
   {
     bagId: "2",
     source: "ANC",
-    location: "Location 2",
+    location: "Terminal 2",
     destination: "SEA",
     currentTask: false,
     completed: false,
@@ -18,7 +18,7 @@ const mockData = [
   {
     bagId: "3",
     source: "EWR",
-    location: "Location 3",
+    location: "Baggage Claim",
     destination: "LAX",
     currentTask: false,
     completed: false,
@@ -26,7 +26,7 @@ const mockData = [
   {
     bagId: "4",
     source: "ORD",
-    location: "Location 4 ",
+    location: "Terminal 2: Tarmac",
     destination: "SFO",
     currentTask: false,
     completed: false,
@@ -34,7 +34,7 @@ const mockData = [
   {
     bagId: "5",
     source: "OAK",
-    location: "Location 5 ",
+    location: "Terminal 1: Lobby",
     destination: "LAX",
     currentTask: false,
     completed: false,
@@ -42,7 +42,7 @@ const mockData = [
   {
     bagId: "6",
     source: "MDW",
-    location: "Location 6 ",
+    location: "Terminal 3: Mileage Plus Lounge",
     destination: "EWR",
     currentTask: false,
     completed: false,
@@ -50,7 +50,7 @@ const mockData = [
   {
     bagId: "7",
     source: "BUR",
-    location: "Location 7 ",
+    location: "Terminal 2: Lost and Found",
     destination: "PSP",
     currentTask: false,
     completed: false,

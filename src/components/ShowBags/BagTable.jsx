@@ -9,7 +9,7 @@ function BagTable({ bags, pickupBag = () => {}, selectCurrentBag = () => {} }) {
       <Table bordered>
         <thead>
           <tr>
-            <th>Bag ID</th>
+            <th>Bag Tag</th>
             <th>Source</th>
             <th>Location</th>
             <th>Destination</th>
