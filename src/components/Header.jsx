@@ -1,7 +1,7 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import { Link, useLocation } from "react-router-dom";
-import { Nav, NavItem, Button } from "react-bootstrap";
+import { Stack, Nav, NavItem, Button } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 
 function Header({ user, loggedIn, handleLogOut }) {
@@ -16,31 +16,26 @@ function Header({ user, loggedIn, handleLogOut }) {
 
   return (
     <div>
-      <Navbar className="navBar" bg="dark" variant="dark">
+      <Navbar bg="dark" variant="dark">
         {/* <Navbar className="navBar"> */}
         <Container>
           <Navbar.Brand className="headerFont" href="#home">
             {/* <img
               alt=""
-              src="/logo.svg"
+              src="../../public/logo.png"
               width="30"
               height="30"
               className="d-inline-block align-top"
-            />{" "} */}
+            /> */}
             UAL Uber POC
           </Navbar.Brand>
 
-          <Nav className="me-auto">
-            <NavItem eventkey={1} href="/">
-              <Nav.Link as={Link} to="/">
-                Home
-              </Nav.Link>
-            </NavItem>
+          <Nav>
             {loggedIn ? (
               <React.Fragment>
                 <NavItem eventkey={2} href="/bags">
                   <Nav.Link as={Link} to="/bags">
-                    Bags
+                    View Bags
                   </Nav.Link>
                 </NavItem>
 

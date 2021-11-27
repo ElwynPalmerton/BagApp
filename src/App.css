@@ -47,6 +47,11 @@
 
 .Current {
   color: rgb(252, 3, 28) !important;
+  /* color: magenta !important; */
+}
+
+.Completed {
+  color: rgb(29, 112, 163);
 }
 
 th {

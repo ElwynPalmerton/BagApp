@@ -6,8 +6,10 @@ function AddBagPage({ addBag, bags }) {
   return (
     <div>
       <ThreeColumnLayout>
-        <AddBagForm addBag={addBag} />
-        <BagTable bags={bags} />
+        <div>
+          <AddBagForm addBag={addBag} />
+          <BagTable bags={bags} />
+        </div>
       </ThreeColumnLayout>
     </div>
   );

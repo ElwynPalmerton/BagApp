@@ -4,22 +4,37 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import { ButtonGroup } from "react-bootstrap";
 import { Stack, ListGroup } from "react-bootstrap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function SelectedBagForm({ selectedBag, pickupBag, closeForm, deliverBag }) {
-  // The function to selected the current bag needs to be passed down to this.
-  //FROM: BagDisplayPage (app.js doesn't need to know this.)
-  // The method to complete a task needs to be written in app and passed down to here.
-  //FROM: app.js - modifies the array of bags.
-
-  function handleCompleteTask() {}
+  const [disableAdd, setDisabledAdd] = useState(false);
+  const [disableDeliver, setDisableDeliver] = useState(false);
 
   useEffect(() => {
     if (selectedBag !== undefined) {
-      console.log("Selected bag inside Selected Bag Form: ", selectedBag.bagId);
-      console.log("Selected bag inside Selected Bag Form: ", selectedBag);
+      setDisabledAdd(false);
+      setDisableDeliver(true);
+      if (selectedBag.currentTask === true) {
+        setDisabledAdd(true);
+        setDisableDeliver(false);
+      }
+
+      if (selectedBag.completed === true) {
+        setDisableDeliver(true);
+      }
     }
   }, [selectedBag]);
+
+  function handlePickupBag() {
+    pickupBag(selectedBag.bagId);
+    setDisabledAdd(true);
+    setDisableDeliver(false);
+  }
+
+  function handleDeliverBag() {
+    deliverBag(selectedBag.bagId);
+    setDisableDeliver(true);
+  }
 
   return (
     <div>
@@ -47,24 +62,29 @@ function SelectedBagForm({ selectedBag, pickupBag, closeForm, deliverBag }) {
               <div>
                 <Stack direction="horizontal" gap={2}>
                   <Button
-                    onClick={() => pickupBag(selectedBag.bagId)}
-                    variant="light"
+                    // onClick={() => pickupBag(selectedBag.bagId)}
+                    onClick={handlePickupBag}
+                    variant="outline-primary"
                     type="submit"
+                    disabled={disableAdd}
                   >
-                    Add
+                    Get Bag
                   </Button>
+
                   <Button
-                    onClick={() => {
-                      deliverBag(selectedBag.bagId);
-                    }}
-                    variant="light"
+                    // onClick={() => {
+                    //   deliverBag(selectedBag.bagId);
+                    // }}
+                    onClick={handleDeliverBag}
+                    variant="primary"
                     type="submit"
+                    disabled={disableDeliver}
                   >
                     Deliver
                   </Button>
                   <Button
                     onClick={closeForm}
-                    variant="outline-secondary"
+                    variant="primary-outline"
                     type="submit"
                   >
                     close

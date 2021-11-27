@@ -69,9 +69,9 @@ function App() {
     <div>
       <Header user={user} loggedIn={isLoggedIn} handleLogOut={handleLogOut} />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        {/* <Route path="/" element={<Home />}></Route> */}
         <Route
-          path="/login"
+          path="login"
           element={<Login handleSubmitLogin={handleSubmitLogin} />}
         ></Route>
         <Route

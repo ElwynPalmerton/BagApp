@@ -1,5 +1,6 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
+import BagRow from "./BagRow";
 
 function BagTable({ bags, pickupBag = () => {}, selectCurrentBag = () => {} }) {
   //You can't select a bag from the  AddBagPage.
@@ -18,17 +19,12 @@ function BagTable({ bags, pickupBag = () => {}, selectCurrentBag = () => {} }) {
         <tbody>
           {bags.map((bag, i) => {
             return (
-              <tr
-                className={bag.currentTask ? "Current" : null}
-                // onClick={() => pickupBag(bag.bagId)}
-                onClick={() => selectCurrentBag(bag.bagId)}
+              <BagRow
                 key={i}
-              >
-                <td>{bag.bagId}</td>
-                <td>{bag.source}</td>
-                <td>{bag.location}</td>
-                <td>{bag.destination}</td>
-              </tr>
+                bag={bag}
+                // pickupBag={pickupBag}
+                selectCurrentBag={selectCurrentBag}
+              />
             );
           })}
         </tbody>

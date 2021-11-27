@@ -42,7 +42,7 @@ const mockData = [
   {
     bagId: "6",
     source: "MDW",
-    location: "Terminal 3: Mileage Plus Lounge",
+    location: "Terminal 3: MP Lounge",
     destination: "EWR",
     currentTask: false,
     completed: false,
