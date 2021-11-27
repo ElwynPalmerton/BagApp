@@ -39,43 +39,43 @@ function AddBagForm({ addBag }) {
   }
 
   return (
-    <ThreeColumnLayout>
-      <Container>
-        <Form onSubmit={(e) => submitBagForm(e)}>
-          <InputField
-            name="bagId"
-            text="Bag ID"
-            inputValue={formFields.bagId}
-            handleInputChange={handleFormChange}
-          ></InputField>
+    // <ThreeColumnLayout>
+    <Container>
+      <Form onSubmit={(e) => submitBagForm(e)}>
+        <InputField
+          name="bagId"
+          text="Bag ID"
+          inputValue={formFields.bagId}
+          handleInputChange={handleFormChange}
+        ></InputField>
 
-          <InputField
-            name="source"
-            text="Source"
-            inputValue={formFields.source}
-            handleInputChange={handleFormChange}
-          ></InputField>
+        <InputField
+          name="source"
+          text="Source"
+          inputValue={formFields.source}
+          handleInputChange={handleFormChange}
+        ></InputField>
 
-          <InputField
-            name="location"
-            text="Location"
-            inputValue={formFields.location}
-            handleInputChange={handleFormChange}
-          ></InputField>
+        <InputField
+          name="location"
+          text="Location"
+          inputValue={formFields.location}
+          handleInputChange={handleFormChange}
+        ></InputField>
 
-          <InputField
-            name="destination"
-            text="Destination"
-            inputValue={formFields.destination}
-            handleInputChange={handleFormChange}
-          ></InputField>
+        <InputField
+          name="destination"
+          text="Destination"
+          inputValue={formFields.destination}
+          handleInputChange={handleFormChange}
+        ></InputField>
 
-          <Button variant="primary" type="submit">
-            Add Bag
-          </Button>
-        </Form>
-      </Container>
-    </ThreeColumnLayout>
+        <Button variant="primary" type="submit">
+          Add Bag
+        </Button>
+      </Form>
+    </Container>
+    // </ThreeColumnLayout>
   );
 }
 
