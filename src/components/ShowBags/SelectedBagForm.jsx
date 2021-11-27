@@ -21,6 +21,7 @@ function SelectedBagForm({ selectedBag, pickupBag, closeForm, deliverBag }) {
 
       if (selectedBag.completed === true) {
         setDisableDeliver(true);
+        setDisabledAdd(true);
       }
     }
   }, [selectedBag]);
@@ -84,7 +85,8 @@ function SelectedBagForm({ selectedBag, pickupBag, closeForm, deliverBag }) {
                   </Button>
                   <Button
                     onClick={closeForm}
-                    variant="primary-outline"
+                    // variant="primary-outline"
+                    variant="sldfkjsdfoutline"
                     type="submit"
                   >
                     close

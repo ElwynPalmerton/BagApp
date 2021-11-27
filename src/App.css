@@ -54,6 +54,10 @@
   color: rgb(29, 112, 163);
 }
 
+.SelectedRow {
+  background-color: rgba(225, 225, 225, 0.7) !important;
+}
+
 th {
   background-color: white !important;
 }
