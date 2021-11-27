@@ -1,7 +1,6 @@
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
-import ThreeColumnLayout from "../Layout/ThreeColumnLayout";
 import InputField from "./InputField";
 import { useState } from "react";
 
@@ -39,7 +38,6 @@ function AddBagForm({ addBag }) {
   }
 
   return (
-    // <ThreeColumnLayout>
     <Container>
       <Form onSubmit={(e) => submitBagForm(e)}>
         <InputField
@@ -75,7 +73,6 @@ function AddBagForm({ addBag }) {
         </Button>
       </Form>
     </Container>
-    // </ThreeColumnLayout>
   );
 }
 

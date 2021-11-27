@@ -5,9 +5,8 @@ import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import { useNavigate } from "react-router";
-import { propTypes } from "react-bootstrap/esm/Image";
 
-function LoginPage({ handleSubmitLogin, ...props }) {
+function LoginPage({ handleSubmitLogin }) {
   const [user, setUser] = useState({
     name: "",
     deviceId: "",

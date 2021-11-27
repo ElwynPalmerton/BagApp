@@ -1,5 +1,5 @@
 import { useState } from "react";
-import BagDisplay from "./BagDisplay";
+import BagTable from "./BagTable";
 import TwoColumnLayout from "../Layout/TwoColumnLayout";
 import SelectedBagForm from "./SelectedBagForm";
 
@@ -14,7 +14,7 @@ function BagDisplayPage({ bags, selectBag }) {
 
   return (
     <TwoColumnLayout
-      left={<BagDisplay bags={bags} selectBag={selectBag} />}
+      left={<BagTable bags={bags} selectBag={selectBag} />}
       right={<SelectedBagForm selectedBag={selectedBag} />}
     />
   );

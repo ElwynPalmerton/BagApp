@@ -1,11 +1,7 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 
-function BagDisplay({ bags, selectBag = () => {} }) {
-  console.log(bags);
+function BagTable({ bags, selectBag = () => {} }) {
   return (
     <div>
       <br />
@@ -40,4 +36,4 @@ function BagDisplay({ bags, selectBag = () => {} }) {
   );
 }
 
-export default BagDisplay;
+export default BagTable;

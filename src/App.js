@@ -9,7 +9,6 @@ import Home from "./components/Home";
 import Login from "./components/LoginPage";
 import { useNavigate } from "react-router-dom";
 import mockData from "./components/mockData";
-import { NavItem } from "react-bootstrap";
 
 function App() {
   let navigate = useNavigate();
@@ -32,11 +31,10 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(bags);
+    // console.log(bags);
   }, [bags]);
 
   function selectBag(id) {
-    console.log("Selecting! ", id);
     setBags(
       bags.map((bag) =>
         bag.bagId === id ? { ...bag, currentTask: true } : bag

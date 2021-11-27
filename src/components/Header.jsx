@@ -9,12 +9,10 @@ function Header({ user, loggedIn, handleLogOut }) {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === "/login") {
-      setOnLoginPage(true);
-    } else {
-      setOnLoginPage(false);
-    }
-  }, []);
+    location.pathname === "/login"
+      ? setOnLoginPage(true)
+      : setOnLoginPage(false);
+  }, [location]);
 
   return (
     <div>
