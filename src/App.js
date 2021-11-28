@@ -1,11 +1,11 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import Header from "./components/Header";
+import Header from "./components/Navbars/Header";
+import Menu from "./components/Navbars/Menu";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddBagPage from "./components/AddBag/AddBagPage";
 import { Routes, Route } from "react-router-dom";
 import BagDisplayPage from "./components/ShowBags/BagDisplayPage";
-import Home from "./components/Home";
 import Login from "./components/LoginPage";
 import { useNavigate } from "react-router-dom";
 import mockData from "./components/mockData";
@@ -68,6 +68,7 @@ function App() {
   return (
     <div>
       <Header user={user} loggedIn={isLoggedIn} handleLogOut={handleLogOut} />
+      <Menu user={user} loggedIn={isLoggedIn} handleLogOut={handleLogOut} />
       <Routes>
         {/* <Route path="/" element={<Home />}></Route> */}
         <Route

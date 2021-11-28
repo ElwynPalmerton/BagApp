@@ -18,7 +18,7 @@ const mockData = [
   {
     bagId: "3",
     source: "EWR",
-    location: "Baggage Claim",
+    location: "Terminal 1: Baggage Claim",
     destination: "LAX",
     currentTask: false,
     completed: false,

@@ -56,6 +56,7 @@
 
 .SelectedRow {
   background-color: rgba(225, 225, 225, 0.7) !important;
+  font-weight: 600;
 }
 
 th {
@@ -81,4 +82,9 @@ tr:nth-child(even) {
 .table-hover tbody tr:hover td {
   /* background: rgba(255, 255, 255, 0); */
   /* background: rgba(255, 0, 0, 0) Important; */
+}
+
+.NavCustom {
+  padding: 0;
+  background: #666666;
 }
