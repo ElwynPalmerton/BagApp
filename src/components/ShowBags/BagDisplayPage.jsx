@@ -2,14 +2,15 @@ import { useEffect, useState } from "react";
 import BagTable from "./BagTable";
 import TwoColumnLayout from "../../Layout/TwoColumnLayout";
 import SelectedBagForm from "./SelectedBagForm";
+import axios from "axios";
 
-function BagDisplayPage({ bags, pickupBag, addBag, deliverBag }) {
+function BagDisplayPage({ bags, pickupBag, deliverBag, initializeBags }) {
   const [selectedBag, setSelectedBag] = useState();
   const [currentBag, setCurrentBag] = useState();
 
   function selectCurrentBag(id) {
     console.log("Current bag: ", id);
-    setSelectedBag(bags.find((bag) => bag.bagId === id));
+    setSelectedBag(bags.find((bag) => bag.id === id));
   }
 
   function closeForm() {
@@ -18,8 +19,22 @@ function BagDisplayPage({ bags, pickupBag, addBag, deliverBag }) {
   }
 
   useEffect(() => {
-    console.log("selected: ", selectedBag);
-  }, [selectedBag]);
+    getAllBags();
+  }, []);
+
+  async function getAllBags() {
+    axios.get("https://localhost:5001/api/bag").then((res) => {
+      console.log(res.data);
+
+      const initialBags = [];
+      res.data.forEach((bag) => {
+        let newBag = {};
+        newBag = { ...bag, bagId: bag.bagtag };
+        initialBags.push(newBag);
+      });
+      initializeBags(initialBags);
+    });
+  }
 
   return (
     <TwoColumnLayout

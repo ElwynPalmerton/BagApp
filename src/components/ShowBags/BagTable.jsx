@@ -6,13 +6,13 @@ import { useState, useEffect } from "react";
 function BagTable({ bags, pickupBag = () => {}, selectCurrentBag = () => {} }) {
   const [selectedRow, setSelectedRow] = useState();
 
-  function handleSelectCurrentBag(bagID) {
-    setSelectedRow(bagID);
-    selectCurrentBag(bagID);
+  function handleSelectCurrentBag(id) {
+    setSelectedRow(id);
+    selectCurrentBag(id);
   }
 
   useEffect(() => {
-    console.log("SelectedRow: ", selectedRow);
+    console.log("SelectedRow in BagTable: ", selectedRow);
   });
 
   return (
@@ -23,7 +23,7 @@ function BagTable({ bags, pickupBag = () => {}, selectCurrentBag = () => {} }) {
           <tr>
             <th>Bag Tag</th>
             <th>Source</th>
-            <th>Location</th>
+            <th>Latitude / Longitude</th>
             <th>Destination</th>
           </tr>
         </thead>

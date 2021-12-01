@@ -3,12 +3,14 @@ import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import InputField from "../InputField";
 import { useState } from "react";
+import axios from "axios";
 
-function AddBagForm({ addBag }) {
+function AddBagForm({ addBag, showNewBagToast }) {
   const [formFields, setFormFields] = useState({
     bagId: "",
     source: "",
-    location: "",
+    latitude: "",
+    longitude: "",
     destination: "",
   });
 
@@ -26,14 +28,28 @@ function AddBagForm({ addBag }) {
     setFormFields({
       bagId: "",
       source: "",
-      location: "",
+      latitude: "",
+      longitude: "",
       destination: "",
     });
   }
 
   function submitBagForm(e) {
     e.preventDefault();
-    addBag(formFields);
+
+    axios
+      .post(`https://localhost:5001/api/bag/${formFields.bagId}`, {
+        ...formFields,
+        bagtag: formFields.bagId,
+      })
+      .then((res) => {
+        console.log(res);
+
+        // Check to see if this is actually successful.
+        addBag(formFields);
+        showNewBagToast(formFields);
+      });
+
     clearForm();
   }
 
@@ -43,7 +59,7 @@ function AddBagForm({ addBag }) {
         <Form onSubmit={(e) => submitBagForm(e)}>
           <InputField
             name="bagId"
-            text="Bag ID"
+            text="Bag Tag"
             inputValue={formFields.bagId}
             handleInputChange={handleFormChange}
           ></InputField>
@@ -56,9 +72,16 @@ function AddBagForm({ addBag }) {
           ></InputField>
 
           <InputField
-            name="location"
-            text="Location"
-            inputValue={formFields.location}
+            name="latitude"
+            text="Latitude"
+            inputValue={formFields.latitude}
+            handleInputChange={handleFormChange}
+          ></InputField>
+
+          <InputField
+            name="longitude"
+            text="Longitude"
+            inputValue={formFields.longitude}
             handleInputChange={handleFormChange}
           ></InputField>
 

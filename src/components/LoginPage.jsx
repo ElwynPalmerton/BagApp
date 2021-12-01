@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import { useNavigate } from "react-router";
+import axios from "axios";
 
 function LoginPage({ handleSubmitLogin }) {
   const [user, setUser] = useState({
@@ -30,6 +31,7 @@ function LoginPage({ handleSubmitLogin }) {
 
   function handleSubmitForm(e) {
     e.preventDefault();
+
     handleSubmitLogin(user);
     clearForm();
     navigate("/bags", { replace: true });

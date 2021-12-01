@@ -51,7 +51,7 @@ function App() {
     );
   }
 
-  function handleSubmitLogin(newUser) {
+  function handleSubmitLogin(newUser, initialBags) {
     setUser(newUser);
     setLoggedIn(true);
   }
@@ -79,6 +79,7 @@ function App() {
           path="bags"
           element={
             <BagDisplayPage
+              initializeBags={setBags}
               pickupBag={pickupBag}
               deliverBag={deliverBag}
               bags={bags}

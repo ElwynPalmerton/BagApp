@@ -88,3 +88,8 @@ tr:nth-child(even) {
   padding: 0;
   background: #666666;
 }
+
+.Overlay {
+  margin: 20px;
+  position: absolute;
+}

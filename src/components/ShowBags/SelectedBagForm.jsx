@@ -52,7 +52,7 @@ function SelectedBagForm({ selectedBag, pickupBag, closeForm, deliverBag }) {
               <Card.Title>Tag#: {selectedBag.bagId}</Card.Title>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  Location: {selectedBag.location}
+                  Location: {selectedBag.latitude}, {selectedBag.longitude}
                 </ListGroup.Item>
                 <ListGroup.Item>Source: {selectedBag.source}</ListGroup.Item>
                 <ListGroup.Item>
