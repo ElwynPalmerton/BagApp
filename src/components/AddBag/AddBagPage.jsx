@@ -3,7 +3,7 @@ import AddBagForm from "./AddBagForm";
 import BagTable from "../ShowBags/BagTable";
 import ThreeColumnLayout from "../../Layout/ThreeColumnLayout";
 import NewBagToast from "./NewBagToast";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 
 function AddBagPage({ addBag, bags }) {
   const [showToast, setShowToast] = useState(false);
@@ -43,7 +43,9 @@ function AddBagPage({ addBag, bags }) {
             showToast={showToast}
             toggleShowToast={toggleShowToast}
           />
-          <h1>Add Bag</h1>
+          <Container>
+            <h1 className="sourceFont">Add Task</h1>
+          </Container>
           <AddBagForm addBag={addBag} showNewBagToast={showNewBagToast} />
           {/* <BagTable bags={bags} /> */}
           {/* <Button onClick={toggleShowToast} className="mb-2">

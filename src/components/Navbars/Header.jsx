@@ -17,7 +17,7 @@ function Header({ user, loggedIn, handleLogOut }) {
 
   return (
     <div>
-      <Navbar bg="dark" variant="dark" className="NavCustom">
+      <Navbar variant="dark" className="NavCustom">
         <Container>
           <img
             // src="../images/UnitedLog.svg"
@@ -27,15 +27,13 @@ function Header({ user, loggedIn, handleLogOut }) {
             className="d-inline-block align-top"
             alt="React Bootstrap logo"
           />
-          <Navbar.Brand className="headerFont" href="#home">
-            UAL Uber POC
-          </Navbar.Brand>
+          <Navbar.Brand href="#home">UAL Uber POC</Navbar.Brand>
 
           <Nav>
             {!loggedIn ? (
               onLoginPage === false ? (
                 <NavItem eventkey={4} href="/login">
-                  <Nav.Link as={Link} to="/login">
+                  <Nav.Link className="navFont" as={Link} to="/login">
                     Login
                   </Nav.Link>
                 </NavItem>

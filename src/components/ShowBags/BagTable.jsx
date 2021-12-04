@@ -17,7 +17,7 @@ function BagTable({ bags, pickupBag = () => {}, selectCurrentBag = () => {} }) {
 
   return (
     <div>
-      <h1>Bags</h1>
+      <h1 className="sourceFont">Work Assignments</h1>
       <Table bordered>
         <thead>
           <tr>

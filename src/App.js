@@ -6,9 +6,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AddBagPage from "./components/AddBag/AddBagPage";
 import { Routes, Route } from "react-router-dom";
 import BagDisplayPage from "./components/ShowBags/BagDisplayPage";
-import Login from "./components/LoginPage";
+import Login from "./components/LoginPage/LoginPage";
 import { useNavigate } from "react-router-dom";
 import mockData from "./components/mockData";
+import MuiLoginPage from "./components/LoginPage/MuiLoginPage";
 
 function App() {
   let navigate = useNavigate();
@@ -69,9 +70,13 @@ function App() {
       <Menu user={user} loggedIn={isLoggedIn} handleLogOut={handleLogOut} />
       <Routes>
         {/* <Route path="/" element={<Home />}></Route> */}
-        <Route
+        {/* <Route
           path="login"
           element={<Login handleSubmitLogin={handleSubmitLogin} />}
+        ></Route> */}
+        <Route
+          path="login"
+          element={<MuiLoginPage handleSubmitLogin={handleSubmitLogin} />}
         ></Route>
         <Route
           path="bags"

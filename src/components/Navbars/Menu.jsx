@@ -23,16 +23,16 @@ function Menu({ user, loggedIn, handleLogOut }) {
           <Container className="justify-content-end">
             <Nav>
               <NavItem eventkey={2} href="/bags">
-                <Nav.Link as={Link} to="/bags">
+                <Nav.Link className="navFont" as={Link} to="/bags">
                   View Bags
                 </Nav.Link>
               </NavItem>
               <NavItem eventkey={2}>
-                <Nav.Link>|</Nav.Link>
+                <Nav.Link className="navFont">|</Nav.Link>
               </NavItem>
 
               <NavItem eventkey={3} href="/addbag">
-                <Nav.Link as={Link} to="/addbag">
+                <Nav.Link className="navFont" as={Link} to="/addbag">
                   Add Bag
                 </Nav.Link>
               </NavItem>

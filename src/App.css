@@ -79,17 +79,35 @@ tr:nth-child(even) {
   background-color: inherit;
 }
 
-.table-hover tbody tr:hover td {
-  /* background: rgba(255, 255, 255, 0); */
-  /* background: rgba(255, 0, 0, 0) Important; */
-}
+/* .table-hover tbody tr:hover td {
+  background: rgba(255, 255, 255, 0);
+  background: rgba(255, 0, 0, 0) Important;
+} */
 
 .NavCustom {
   padding: 0;
-  background: #666666;
+  background: #002244;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.sourceFont {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.navFont {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
 }
 
 .Overlay {
   margin: 20px;
   position: absolute;
 }
+
+/* .MuiButton-root {
+  color: rgb(252, 3, 28);
+}
+
+.MuiButton-outlined {
+  color: rgb(252, 3, 28);
+} */
