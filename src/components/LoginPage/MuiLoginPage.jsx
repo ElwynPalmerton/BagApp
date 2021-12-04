@@ -4,18 +4,9 @@ import { useNavigate } from "react-router";
 import axios from "axios";
 import Button from "@mui/material/Button";
 import MuiInputField from "../MuiTextField";
-import FormControl from "@mui/material/FormControl";
 import { Container, Row, Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-
-const buttonStyle = {
-  backgroundColor: "#6850af",
-  color: "white",
-  fontFamily: "Source Sans Pro",
-  borderStyle: "none",
-  fontWeight: "bold",
-  "&:hover": { backgroundColor: "#6244BB" },
-};
+import MuiButton from "../MuiButton";
 
 function MuiLoginPage({ handleSubmitLogin }) {
   // const classes = useStyles();
@@ -68,14 +59,7 @@ function MuiLoginPage({ handleSubmitLogin }) {
               handleInputChange={(e) => handleFormChange(e)}
             />
             <div className="text-center">
-              <Button
-                sx={{ ...buttonStyle, marginTop: "1rem" }}
-                variant="outlined"
-                disableElevation
-                type="submit"
-              >
-                Login
-              </Button>
+              <MuiButton text="Login"></MuiButton>
             </div>
           </div>
         </Form>

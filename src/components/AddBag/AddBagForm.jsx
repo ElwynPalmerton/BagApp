@@ -4,6 +4,8 @@ import Container from "react-bootstrap/Container";
 import InputField from "../InputField";
 import { useState } from "react";
 import axios from "axios";
+import MuiTextField from "../MuiTextField";
+import MuiButton from "../MuiButton";
 
 function AddBagForm({ addBag, showNewBagToast }) {
   const [formFields, setFormFields] = useState({
@@ -47,6 +49,9 @@ function AddBagForm({ addBag, showNewBagToast }) {
 
         // Check to see if this is actually successful.
         addBag(formFields);
+        showNewBagToast(formFields);
+      })
+      .catch((error) => {
         showNewBagToast(formFields);
       });
 
@@ -92,9 +97,9 @@ function AddBagForm({ addBag, showNewBagToast }) {
             handleInputChange={handleFormChange}
           ></InputField>
 
-          <Button variant="primary" type="submit">
-            Add Bag
-          </Button>
+          <div className="text-center">
+            <MuiButton text="Add Task"></MuiButton>
+          </div>
         </Form>
       </Container>
       <br />

@@ -48,7 +48,7 @@ function Header({ user, loggedIn, handleLogOut }) {
                 <Button
                   onClick={handleLogOut}
                   variant="dark"
-                  style={{ color: "grey" }}
+                  style={{ backgroundColor: "#002244", border: "none" }}
                 >
                   Log out
                 </Button>

@@ -4,6 +4,7 @@ import BagTable from "../ShowBags/BagTable";
 import ThreeColumnLayout from "../../Layout/ThreeColumnLayout";
 import NewBagToast from "./NewBagToast";
 import { Button, Container } from "react-bootstrap";
+import MuiAddBagForm from "./MuiAddBagForm";
 
 function AddBagPage({ addBag, bags }) {
   const [showToast, setShowToast] = useState(false);

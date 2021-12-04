@@ -10,6 +10,7 @@ import Login from "./components/LoginPage/LoginPage";
 import { useNavigate } from "react-router-dom";
 import mockData from "./components/mockData";
 import MuiLoginPage from "./components/LoginPage/MuiLoginPage";
+import Stack from "react-bootstrap/Stack";
 
 function App() {
   let navigate = useNavigate();
@@ -68,32 +69,35 @@ function App() {
     <div>
       <Header user={user} loggedIn={isLoggedIn} handleLogOut={handleLogOut} />
       <Menu user={user} loggedIn={isLoggedIn} handleLogOut={handleLogOut} />
-      <Routes>
-        {/* <Route path="/" element={<Home />}></Route> */}
-        {/* <Route
+      <div>
+        <Routes>
+          {/* <Route path="/" element={<Home />}></Route> */}
+          {/* <Route
           path="login"
           element={<Login handleSubmitLogin={handleSubmitLogin} />}
         ></Route> */}
-        <Route
-          path="login"
-          element={<MuiLoginPage handleSubmitLogin={handleSubmitLogin} />}
-        ></Route>
-        <Route
-          path="bags"
-          element={
-            <BagDisplayPage
-              initializeBags={setBags}
-              pickupBag={pickupBag}
-              deliverBag={deliverBag}
-              bags={bags}
-            />
-          }
-        ></Route>
-        <Route
-          path="/addbag"
-          element={<AddBagPage addBag={addBag} bags={bags} />}
-        ></Route>
-      </Routes>
+          <Route
+            path="login"
+            element={<MuiLoginPage handleSubmitLogin={handleSubmitLogin} />}
+          ></Route>
+          <Route
+            path="bags"
+            element={
+              <BagDisplayPage
+                initializeBags={setBags}
+                pickupBag={pickupBag}
+                deliverBag={deliverBag}
+                bags={bags}
+              />
+            }
+          ></Route>
+          <Route
+            path="/addbag"
+            element={<AddBagPage addBag={addBag} bags={bags} />}
+          ></Route>
+        </Routes>
+      </div>
+      <div class="footer"></div>
     </div>
   );
 }
