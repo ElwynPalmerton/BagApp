@@ -1,18 +1,14 @@
 import { useState } from "react";
 import ThreeColumnLayout from "../../Layout/ThreeColumnLayout";
-import InputField from "../InputField";
-import Form from "react-bootstrap/Form";
-import Container from "react-bootstrap/Container";
 import { useNavigate } from "react-router";
 import axios from "axios";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Input from "@mui/material/Input";
-import { withStyles } from "@mui/styles";
-import { inputLabelClasses } from "@mui/material/InputLabel";
 import MuiInputField from "../MuiTextField";
+import FormControl from "@mui/material/FormControl";
+import { Container, Row, Col } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 
-const style = {
+const buttonStyle = {
   backgroundColor: "#6850af",
   color: "white",
   fontFamily: "Source Sans Pro",
@@ -54,44 +50,37 @@ function MuiLoginPage({ handleSubmitLogin }) {
   }
 
   return (
-    // <ThreeColumnLayout>
-    //   <Container>
-    //     <Form onSubmit={(e) => handleSubmitForm(e)}>
+    <ThreeColumnLayout>
+      <Container>
+        <Form onSubmit={(e) => handleSubmitForm(e)}>
+          <div>
+            <MuiInputField
+              name="name"
+              text="User Name"
+              inputValue={user.name}
+              handleInputChange={(e) => handleFormChange(e)}
+            ></MuiInputField>
 
-    <div>
-      <MuiInputField
-        name="name"
-        text="User Name"
-        inputValue={user.name}
-        handleInputChange={(e) => handleFormChange(e)}
-      ></MuiInputField>
-
-      <br />
-
-      <MuiInputField
-        name="deviceId"
-        text="Device ID#"
-        inputValue={user.deviceId}
-        handleInputChange={(e) => handleFormChange(e)}
-      />
-
-      <br />
-      <br />
-      <br />
-
-      <Button
-        sx={{ ...style }}
-        variant="outlined"
-        disableElevation
-        type="submit"
-      >
-        Login
-      </Button>
-    </div>
-    //       {/* <StyledButton>styled</StyledButton> */}
-    //     </Form>
-    //   </Container>
-    // </ThreeColumnLayout>
+            <MuiInputField
+              name="deviceId"
+              text="Device ID#"
+              inputValue={user.deviceId}
+              handleInputChange={(e) => handleFormChange(e)}
+            />
+            <div className="text-center">
+              <Button
+                sx={{ ...buttonStyle, marginTop: "1rem" }}
+                variant="outlined"
+                disableElevation
+                type="submit"
+              >
+                Login
+              </Button>
+            </div>
+          </div>
+        </Form>
+      </Container>
+    </ThreeColumnLayout>
   );
 }
 

@@ -1,5 +1,4 @@
 import TextField from "@mui/material/TextField";
-import Input from "@mui/material/Input";
 import { withStyles } from "@mui/styles";
 import { inputLabelClasses } from "@mui/material/InputLabel";
 
@@ -12,6 +11,9 @@ const CustomTextField = withStyles({
         // borderBottom: "initial",
         borderBottomColor: "#004080",
       },
+      fontFamily: "Source Sans Pro",
+      fontWeight: "bold",
+      color: "#004080",
     },
   },
 })(TextField);
@@ -19,14 +21,17 @@ const CustomTextField = withStyles({
 function MuiInputField({ text, name, inputValue, handleInputChange }) {
   return (
     <CustomTextField
+      margin="normal"
+      fullWidth="true"
       label={text}
       name={name}
       value={inputValue}
       onChange={handleInputChange}
+      //   sx={{ color: "red" }}
       InputLabelProps={{
         sx: {
           // set the color of the label when not shrinked
-          color: "grey",
+          //   color: "grey",
           [`&.${inputLabelClasses.shrink}`]: {
             // set the color of the label when shrinked (usually when the TextField is focused)
             color: "004080",
@@ -34,8 +39,6 @@ function MuiInputField({ text, name, inputValue, handleInputChange }) {
           },
         },
       }}
-      sx={{ borderBottomColor: "red" }}
-      // placeholder="hello"
       id="standard-basic"
       variant="standard"
       disableAnimation={true}
