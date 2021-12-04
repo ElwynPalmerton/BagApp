@@ -21,12 +21,14 @@ function BagRow({ bag, handleSelectCurrentBag, selectedRow }) {
       onClick={() => handleSelectCurrentRow(bag.id)}
     >
       <td>{bag.id}</td>
-      <td>{bag.bagId}</td>
+      <td>{bag.bagtag}</td>
       <td>{bag.source}</td>
       <td>
         {bag.longitude}, {bag.latitude}
       </td>
       <td>{bag.destination}</td>
+      <td>{bag.currentTask ? "X" : ""}</td>
+      <td>{bag.completed ? "X" : ""}</td>
       {/* <td>{bag.currentTask ? "X" : ""}</td> */}
       {/* <td>{bag.completed ? "X" : ""}</td> */}
     </tr>

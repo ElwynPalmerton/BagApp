@@ -44,7 +44,7 @@ function App() {
     console.log("delivering bag#: ", id);
     setBags(
       bags.map((bag) =>
-        bag.bagId === id ? { ...bag, currentTask: false, completed: true } : bag
+        bag.id === id ? { ...bag, currentTask: false, completed: true } : bag
       )
     );
   }

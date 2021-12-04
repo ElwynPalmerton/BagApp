@@ -33,7 +33,8 @@ function SelectedBagForm({ selectedBag, pickupBag, closeForm, deliverBag }) {
   }
 
   function handleDeliverBag() {
-    deliverBag(selectedBag.bagId);
+    console.log("in BagForm ", selectedBag.id);
+    deliverBag(selectedBag.id);
     setDisableDeliver(true);
   }
 

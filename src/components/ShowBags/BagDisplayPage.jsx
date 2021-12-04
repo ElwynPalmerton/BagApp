@@ -29,7 +29,7 @@ function BagDisplayPage({ bags, pickupBag, deliverBag, initializeBags }) {
       const initialBags = [];
       res.data.forEach((bag) => {
         let newBag = {};
-        newBag = { ...bag, bagId: bag.bagtag };
+        newBag = { ...bag, bagtag: bag.bagtag };
         initialBags.push(newBag);
       });
       initializeBags(initialBags);

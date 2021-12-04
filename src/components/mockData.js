@@ -1,6 +1,7 @@
 const mockData = [
   {
-    bagId: "1",
+    id: "1",
+    bagtag: 349239,
     source: "EWR",
     longitude: 90,
     latitude: 91,
@@ -9,7 +10,8 @@ const mockData = [
     completed: false,
   },
   {
-    bagId: "2",
+    id: "2",
+    bagtag: 934343,
     source: "ANC",
     longitude: 92,
     latitude: 93,
@@ -18,7 +20,8 @@ const mockData = [
     completed: false,
   },
   {
-    bagId: "3",
+    id: "3",
+    bagtag: 783473,
     source: "EWR",
     longitude: 94,
     latitude: 95,
@@ -27,7 +30,8 @@ const mockData = [
     completed: false,
   },
   {
-    bagId: "4",
+    id: "4",
+    bagtag: 123943,
     source: "ORD",
     longitude: 96,
     latitude: 97,
@@ -36,7 +40,8 @@ const mockData = [
     completed: false,
   },
   {
-    bagId: "5",
+    id: "5",
+    bagtag: 948202,
     source: "OAK",
     longitude: 98,
     latitude: 100,
@@ -45,7 +50,8 @@ const mockData = [
     completed: false,
   },
   {
-    bagId: "6",
+    id: "6",
+    bagtag: 938281,
     source: "MDW",
     longitude: 101,
     latitude: 102,
@@ -54,7 +60,8 @@ const mockData = [
     completed: false,
   },
   {
-    bagId: "7",
+    id: "7",
+    bagtag: 3847382,
     source: "BUR",
     longitude: 103,
     latitude: 105,

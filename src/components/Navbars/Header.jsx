@@ -1,8 +1,9 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import { Link, useLocation } from "react-router-dom";
-import { Stack, Nav, NavItem, Button } from "react-bootstrap";
+import { Nav, NavItem, Button } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
+import UnitedLogo from "../images/UnitedLogo.svg";
 
 function Header({ user, loggedIn, handleLogOut }) {
   const [onLoginPage, setOnLoginPage] = useState(false);
@@ -18,6 +19,14 @@ function Header({ user, loggedIn, handleLogOut }) {
     <div>
       <Navbar bg="dark" variant="dark" className="NavCustom">
         <Container>
+          <img
+            // src="../images/UnitedLog.svg"
+            src={UnitedLogo}
+            // width="30"
+            // height="30"
+            className="d-inline-block align-top"
+            alt="React Bootstrap logo"
+          />
           <Navbar.Brand className="headerFont" href="#home">
             UAL Uber POC
           </Navbar.Brand>
