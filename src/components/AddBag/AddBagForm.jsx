@@ -43,7 +43,7 @@ function AddBagForm({ addBag, showNewBagToast }) {
         bagtag: formFields.bagId,
       })
       .then((res) => {
-        console.log(res);
+        console.log("POST result: ", res);
 
         // Check to see if this is actually successful.
         addBag(formFields);

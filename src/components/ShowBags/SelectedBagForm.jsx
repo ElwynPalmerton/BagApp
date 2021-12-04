@@ -27,7 +27,7 @@ function SelectedBagForm({ selectedBag, pickupBag, closeForm, deliverBag }) {
   }, [selectedBag]);
 
   function handlePickupBag() {
-    pickupBag(selectedBag.bagId);
+    pickupBag(selectedBag.id);
     setDisabledAdd(true);
     setDisableDeliver(false);
   }

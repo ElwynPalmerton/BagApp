@@ -7,7 +7,6 @@ To run:
 $ docker run \
     -it \
     -d \
-    --rm \
     --name bagappcontainer \
     -v ${PWD}:/app \
     -v /app/node_modules \

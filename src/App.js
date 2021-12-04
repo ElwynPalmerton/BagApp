@@ -36,9 +36,7 @@ function App() {
 
   function pickupBag(id) {
     setBags(
-      bags.map((bag) =>
-        bag.bagId === id ? { ...bag, currentTask: true } : bag
-      )
+      bags.map((bag) => (bag.id === id ? { ...bag, currentTask: true } : bag))
     );
   }
 
