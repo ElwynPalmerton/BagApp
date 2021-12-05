@@ -6,6 +6,9 @@ export const usePosition = () => {
 
   const onChange = ({ coords }) => {
     console.log("setting");
+    console.log(coords);
+    console.log(coords.latitude);
+    console.log(coords.longitude);
     setPosition({
       latitude: coords.latitude,
       longitude: coords.longitude,
@@ -13,6 +16,7 @@ export const usePosition = () => {
   };
 
   const onError = (error) => {
+    console.log(error);
     setError(error.message);
   };
 
@@ -27,5 +31,5 @@ export const usePosition = () => {
     return () => geo.clearWatch(watcher);
   }, []);
 
-  return { ...position, error };
+  return { position, error };
 };

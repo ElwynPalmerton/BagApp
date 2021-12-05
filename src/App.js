@@ -14,7 +14,8 @@ import { usePosition } from "./components/Utils/usePosition";
 
 function App() {
   let navigate = useNavigate();
-  // const { latitude, longitude, error } = usePosition();
+  const { position, error } = usePosition();
+  // const [position, setPosition] = useState({ longitude: 0, latitude: 0 });
 
   const [bags, setBags] = useState(mockData);
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -34,23 +35,7 @@ function App() {
   }
 
   useEffect(() => {
-    const geo = navigator.geolocation;
-    if (!geo) {
-      console.log("Not supported");
-      return;
-    } else {
-      console.log("Supported");
-      geo.getCurrentPosition(
-        (pos) => {
-          // console.log(pos);
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
-    }
-
-    // const watcher = geo.watchPosition(onChange, onError);
+    console.log();
   });
 
   function pickupBag(id) {
@@ -84,11 +69,13 @@ function App() {
 
   return (
     <div>
-      {/* <h1>Latitude: {latitude}</h1>
-      <h1>Longitude: {longitude}</h1> */}
-
       <Header user={user} loggedIn={isLoggedIn} handleLogOut={handleLogOut} />
-      <Menu user={user} loggedIn={isLoggedIn} handleLogOut={handleLogOut} />
+      <Menu
+        user={user}
+        position={position}
+        loggedIn={isLoggedIn}
+        handleLogOut={handleLogOut}
+      />
       <div>
         <Routes>
           <Route

@@ -3,8 +3,9 @@ import Container from "react-bootstrap/Container";
 import { Link, useLocation } from "react-router-dom";
 import { Nav, NavItem } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
+import { positions } from "@mui/system";
 
-function Menu({ user, loggedIn, handleLogOut }) {
+function Menu({ user, loggedIn, position, handleLogOut }) {
   const [onLoginPage, setOnLoginPage] = useState(false);
   const location = useLocation();
 
@@ -19,7 +20,10 @@ function Menu({ user, loggedIn, handleLogOut }) {
       {/* {loggedIn ? ( */}
       <div>
         <Navbar bg="light" className="justify-content-end">
-          <Container className="justify-content-end">
+          <Container>
+            <Nav.Item>
+              Location: {position.longitude}, {position.latitude}
+            </Nav.Item>
             <Nav>
               <NavItem eventkey={2} href="/bags">
                 <Nav.Link className="navFont" as={Link} to="/bags">
