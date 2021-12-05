@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import { useState } from "react";
 import axios from "axios";
 import MuiTextField from "../MuiTextField";
-import MuiButton from "../MuiButton";
+import MuiAddBagButton from "../MuiButton";
 
 function MuiAddBagForm({ addBag, showNewBagToast }) {
   const [formFields, setFormFields] = useState({
@@ -57,12 +57,6 @@ function MuiAddBagForm({ addBag, showNewBagToast }) {
     <div>
       <Container>
         <Form onSubmit={(e) => submitBagForm(e)}>
-          {/* <InputField
-            name="bagId"
-            text="Bag Tag"
-            inputValue={formFields.bagId}
-            handleInputChange={handleFormChange}
-          ></InputField> */}
           <MuiTextField
             name="bagId"
             text="Bag Tag"
@@ -99,7 +93,7 @@ function MuiAddBagForm({ addBag, showNewBagToast }) {
           ></MuiTextField>
 
           <div className="text-center">
-            <MuiButton text="Login"></MuiButton>
+            <MuiAddBagButton text="Add Bag">Add Bag</MuiAddBagButton>
           </div>
         </Form>
       </Container>

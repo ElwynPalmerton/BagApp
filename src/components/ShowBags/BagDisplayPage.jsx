@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import BagTable from "./BagTable";
 import ThreeColumnLayout from "../../Layout/ThreeColumnLayout";
-import SelectedBagForm from "../SelectedBagPage/SelectedBagForm";
 import axios from "axios";
 
 function BagDisplayPage({ bags, pickupBag, deliverBag, initializeBags }) {

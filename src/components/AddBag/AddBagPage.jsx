@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import AddBagForm from "./AddBagForm";
-import BagTable from "../ShowBags/BagTable";
 import ThreeColumnLayout from "../../Layout/ThreeColumnLayout";
 import NewBagToast from "./NewBagToast";
-import { Button, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import MuiAddBagForm from "./MuiAddBagForm";
 
 function AddBagPage({ addBag, bags }) {

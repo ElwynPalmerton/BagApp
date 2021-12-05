@@ -22,7 +22,7 @@ function MuiInputField({ text, name, inputValue, handleInputChange }) {
   return (
     <CustomTextField
       margin="normal"
-      fullWidth="true"
+      fullWidth={true}
       label={text}
       name={name}
       value={inputValue}
@@ -41,7 +41,6 @@ function MuiInputField({ text, name, inputValue, handleInputChange }) {
       }}
       id="outlined-basic"
       variant="outlined"
-      disableAnimation={true}
     />
   );
 }

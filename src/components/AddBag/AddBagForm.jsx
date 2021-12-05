@@ -1,10 +1,8 @@
 import Form from "react-bootstrap/Form";
-import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import InputField from "../InputField";
 import { useState } from "react";
 import axios from "axios";
-import MuiTextField from "../MuiTextField";
 import MuiButton from "../MuiButton";
 
 function AddBagForm({ addBag, showNewBagToast }) {
@@ -98,7 +96,7 @@ function AddBagForm({ addBag, showNewBagToast }) {
           ></InputField>
 
           <div className="text-center">
-            <MuiButton text="Add Task"></MuiButton>
+            <MuiButton text={text}>Add Bag</MuiButton>
           </div>
         </Form>
       </Container>

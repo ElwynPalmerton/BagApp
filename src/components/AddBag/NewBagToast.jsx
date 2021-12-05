@@ -1,5 +1,4 @@
-import react, { useEffect, useState } from "react";
-import { Row, Col, Button, Toast, ToastContainer } from "react-bootstrap";
+import { Toast, ToastContainer } from "react-bootstrap";
 
 function NewBagToast({ newBag, showToast, toggleShowToast }) {
   //   useEffect(() => {}, showToast);

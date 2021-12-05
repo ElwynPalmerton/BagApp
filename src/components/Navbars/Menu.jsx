@@ -1,8 +1,7 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import { Link, useLocation } from "react-router-dom";
-import { Stack, Row, Col, Nav, NavItem, Button } from "react-bootstrap";
-// import { LinkContainer } from "react-router-bootstrap";
+import { Nav, NavItem } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 
 function Menu({ user, loggedIn, handleLogOut }) {

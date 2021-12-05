@@ -2,9 +2,8 @@ import { useState } from "react";
 import ThreeColumnLayout from "../../Layout/ThreeColumnLayout";
 import { useNavigate } from "react-router";
 import axios from "axios";
-import Button from "@mui/material/Button";
 import MuiInputField from "../MuiTextField";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import MuiButton from "../MuiButton";
 
@@ -59,7 +58,7 @@ function MuiLoginPage({ handleSubmitLogin }) {
               handleInputChange={(e) => handleFormChange(e)}
             />
             <div className="text-center">
-              <MuiButton text="Login"></MuiButton>
+              <MuiButton>Login</MuiButton>
             </div>
           </div>
         </Form>

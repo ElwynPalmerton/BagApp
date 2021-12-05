@@ -1,4 +1,4 @@
-import react, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ThreeColumnLayout from "../../Layout/ThreeColumnLayout";
 import SelectedBagForm from "./SelectedBagForm";
@@ -14,7 +14,7 @@ function SelectedBagPage({ bags }) {
     });
     console.log(selected);
     setSelectedBag(selected);
-  }, []);
+  }, [bags, id]);
 
   return (
     <ThreeColumnLayout>
