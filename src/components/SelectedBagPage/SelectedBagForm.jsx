@@ -59,7 +59,7 @@ function SelectedBagForm({ selectedBag, pickupBag, closeForm, deliverBag }) {
                 </ListGroup.Item>
               </ListGroup>
               <br />
-              <div>
+              {/* <div>
                 <Stack direction="horizontal" gap={2}>
                   <Button
                     // onClick={() => pickupBag(selectedBag.bagId)}
@@ -90,8 +90,8 @@ function SelectedBagForm({ selectedBag, pickupBag, closeForm, deliverBag }) {
                   >
                     close
                   </Button>
-                </Stack>
-              </div>
+                </Stack> */}
+              {/* </div> */}
             </Card.Body>
           </Card>
         </Container>

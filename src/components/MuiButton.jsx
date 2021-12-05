@@ -10,8 +10,6 @@ const buttonStyle = {
 };
 
 function MuiButton({ text, children }) {
-  console.log("button text: ", text);
-  console.log("children: ", children);
   return (
     <Button
       sx={{ ...buttonStyle, marginTop: "1rem" }}

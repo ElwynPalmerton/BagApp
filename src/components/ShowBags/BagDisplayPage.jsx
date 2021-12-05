@@ -23,7 +23,7 @@ function BagDisplayPage({ bags, pickupBag, deliverBag, initializeBags }) {
 
   async function getAllBags() {
     axios.get("https://localhost:5001/api/bag").then((res) => {
-      console.log("Get all bags on BagPage: ", res.data);
+      // console.log("Get all bags on BagPage: ", res.data);
 
       const initialBags = [];
       res.data.forEach((bag) => {

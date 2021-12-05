@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import mockData from "./components/mockData";
 import MuiLoginPage from "./components/LoginPage/MuiLoginPage";
 import SelectedBagPage from "./components/SelectedBagPage/SelectedBagPage";
+import { getOutlinedInputUtilityClass } from "@mui/material";
 
 function App() {
   let navigate = useNavigate();
@@ -32,8 +33,25 @@ function App() {
   }
 
   useEffect(() => {
-    // console.log(bags);
-  }, [bags]);
+    const geo = navigator.geolocation;
+    if (!geo) {
+      console.log("Not supported");
+      return;
+    } else {
+      console.log("Supported");
+      geo.getCurrentPosition(
+        (pos) => {
+          console.log("pos: ");
+          console.log(pos);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    }
+
+    // const watcher = geo.watchPosition(onChange, onError);
+  });
 
   function pickupBag(id) {
     setBags(

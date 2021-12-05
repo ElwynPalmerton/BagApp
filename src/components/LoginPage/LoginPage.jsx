@@ -38,6 +38,7 @@ function LoginPage({ handleSubmitLogin }) {
   const [user, setUser] = useState({
     name: "",
     deviceId: "",
+    position: "",
   });
 
   let navigate = useNavigate();

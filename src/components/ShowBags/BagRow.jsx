@@ -22,7 +22,6 @@ function BagRow({
   const classes = `${classCurrent} ${classSelected} ${classCompleted}`;
 
   function handleSelectCurrentRow(id) {
-    console.log("bag# in BagRow:", id);
     handleSelectCurrentBag(bag.id);
   }
 
@@ -31,16 +30,12 @@ function BagRow({
     if (bag.currentTask === false && bag.completed === false) {
       pickupBag(bag.id);
     }
-
-    console.log("Checked Pickup Bag");
   }
 
   function handleCheckDeliverBag() {
     if (bag.currentTask === true) {
-      console.log("Call deliverBag");
       deliverBag(bag.id);
     }
-    console.log("Checked Deliver Bag.");
   }
 
   return (
