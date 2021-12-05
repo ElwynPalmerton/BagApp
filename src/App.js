@@ -10,10 +10,11 @@ import { useNavigate } from "react-router-dom";
 import mockData from "./components/mockData";
 import MuiLoginPage from "./components/LoginPage/MuiLoginPage";
 import SelectedBagPage from "./components/SelectedBagPage/SelectedBagPage";
-import { getOutlinedInputUtilityClass } from "@mui/material";
+import { usePosition } from "./components/Utils/usePosition";
 
 function App() {
   let navigate = useNavigate();
+  // const { latitude, longitude, error } = usePosition();
 
   const [bags, setBags] = useState(mockData);
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -41,8 +42,7 @@ function App() {
       console.log("Supported");
       geo.getCurrentPosition(
         (pos) => {
-          console.log("pos: ");
-          console.log(pos);
+          // console.log(pos);
         },
         (err) => {
           console.log(err);
@@ -84,6 +84,9 @@ function App() {
 
   return (
     <div>
+      {/* <h1>Latitude: {latitude}</h1>
+      <h1>Longitude: {longitude}</h1> */}
+
       <Header user={user} loggedIn={isLoggedIn} handleLogOut={handleLogOut} />
       <Menu user={user} loggedIn={isLoggedIn} handleLogOut={handleLogOut} />
       <div>

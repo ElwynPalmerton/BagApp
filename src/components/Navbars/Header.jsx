@@ -24,8 +24,8 @@ function Header({ user, loggedIn, handleLogOut }) {
             src={UnitedLogo}
             // width="30"
             // height="30"
-            className="d-inline-block align-top"
-            alt="React Bootstrap logo"
+            // className="d-inline-block align-top"
+            // alt="React Bootstrap logo"
           />
           <Navbar.Brand href="#home">UAL Uber POC</Navbar.Brand>
 
