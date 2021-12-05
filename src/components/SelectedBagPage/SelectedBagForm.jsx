@@ -50,7 +50,7 @@ function SelectedBagForm({ selectedBag, pickupBag, closeForm, deliverBag }) {
           <Card style={{ width: "18rem" }}>
             {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
             <Card.Body>
-              <Card.Title>Tag#: {selectedBag.bagId}</Card.Title>
+              <Card.Title>Bag Tag#: {selectedBag.bagtag}</Card.Title>
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   Location: {selectedBag.latitude}, {selectedBag.longitude}

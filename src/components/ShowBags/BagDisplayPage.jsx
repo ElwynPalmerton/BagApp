@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import BagTable from "./BagTable";
-import TwoColumnLayout from "../../Layout/TwoColumnLayout";
-import SelectedBagForm from "./SelectedBagForm";
+import ThreeColumnLayout from "../../Layout/ThreeColumnLayout";
+import SelectedBagForm from "../SelectedBagPage/SelectedBagForm";
 import axios from "axios";
 
 function BagDisplayPage({ bags, pickupBag, deliverBag, initializeBags }) {
@@ -37,25 +37,15 @@ function BagDisplayPage({ bags, pickupBag, deliverBag, initializeBags }) {
   }
 
   return (
-    <TwoColumnLayout
-      left={
-        <BagTable
-          pickupBag={pickupBag}
-          deliverBag={deliverBag}
-          bags={bags}
-          selectBag={pickupBag}
-          selectCurrentBag={(id) => selectCurrentBag(id)}
-        />
-      }
-      // right={
-      //   <SelectedBagForm
-      //     selectedBag={selectedBag}
-      //     pickupBag={pickupBag}
-      //     closeForm={closeForm}
-      //     deliverBag={deliverBag}
-      //   />
-      // }
-    />
+    <ThreeColumnLayout>
+      <BagTable
+        pickupBag={pickupBag}
+        deliverBag={deliverBag}
+        bags={bags}
+        selectBag={pickupBag}
+        selectCurrentBag={(id) => selectCurrentBag(id)}
+      />
+    </ThreeColumnLayout>
   );
 }
 

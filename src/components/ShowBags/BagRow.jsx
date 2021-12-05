@@ -1,6 +1,7 @@
 import react, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Checkbox from "@mui/material/Checkbox";
+import { Link, generatePath } from "react-router-dom";
 
 function BagRow({
   bag,
@@ -14,6 +15,10 @@ function BagRow({
 
   const classCurrent = bag.currentTask ? "Current" : "";
   const classCompleted = bag.completed ? "Completed" : classCurrent;
+
+  const path = generatePath("/selectedbag/:id/", {
+    id: bag.bagtag,
+  });
 
   const classes = `${classCurrent} ${classSelected} ${classCompleted}`;
 
@@ -41,21 +46,21 @@ function BagRow({
 
   return (
     <tr
+      key={bag.id}
       className={classes}
       // onClick={() => pickupBag(bag.bagId)}
       // ^-- in case you want to pickup bad directly from Table
       onClick={() => handleSelectCurrentRow(bag.id)}
     >
       <td>{bag.id}</td>
-      <td>{bag.bagtag}</td>
+      <td>
+        <Link to={path}>{bag.bagtag}</Link>
+      </td>
       <td>{bag.source}</td>
       <td>
         {bag.longitude}, {bag.latitude}
       </td>
       <td>{bag.destination}</td>
-      <td>{bag.currentTask ? "X" : ""}</td>
-
-      <td>{bag.completed ? "X" : ""}</td>
       <td>
         <form onChange={handleCheckPickupBag}>
           <Checkbox
@@ -72,8 +77,6 @@ function BagRow({
           ></Checkbox>
         </form>
       </td>
-      {/* <td>{bag.currentTask ? "X" : ""}</td> */}
-      {/* <td>{bag.completed ? "X" : ""}</td> */}
     </tr>
   );
 }

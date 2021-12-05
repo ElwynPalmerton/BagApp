@@ -31,10 +31,8 @@ function BagTable({
             <th>Source</th>
             <th>Latitude / Longitude</th>
             <th>Destination</th>
-            <th>Current</th>
-            <th>Delivered</th>
-            <th>Pickup Bag</th>
-            <th>Deliver</th>
+            <th>Current Task</th>
+            <th>Completed</th>
           </tr>
         </thead>
         <tbody>

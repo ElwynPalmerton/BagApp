@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import mockData from "./components/mockData";
 import MuiLoginPage from "./components/LoginPage/MuiLoginPage";
 import Stack from "react-bootstrap/Stack";
+import SelectedBagPage from "./components/SelectedBagPage/SelectedBagPage";
 
 function App() {
   let navigate = useNavigate();
@@ -94,6 +95,10 @@ function App() {
           <Route
             path="/addbag"
             element={<AddBagPage addBag={addBag} bags={bags} />}
+          ></Route>
+          <Route
+            path="/selectedbag/:id"
+            element={<SelectedBagPage bags={bags} />}
           ></Route>
         </Routes>
       </div>
