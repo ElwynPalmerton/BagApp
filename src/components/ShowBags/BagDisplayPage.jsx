@@ -40,19 +40,21 @@ function BagDisplayPage({ bags, pickupBag, deliverBag, initializeBags }) {
     <TwoColumnLayout
       left={
         <BagTable
+          pickupBag={pickupBag}
+          deliverBag={deliverBag}
           bags={bags}
           selectBag={pickupBag}
           selectCurrentBag={(id) => selectCurrentBag(id)}
         />
       }
-      right={
-        <SelectedBagForm
-          selectedBag={selectedBag}
-          pickupBag={pickupBag}
-          closeForm={closeForm}
-          deliverBag={deliverBag}
-        />
-      }
+      // right={
+      //   <SelectedBagForm
+      //     selectedBag={selectedBag}
+      //     pickupBag={pickupBag}
+      //     closeForm={closeForm}
+      //     deliverBag={deliverBag}
+      //   />
+      // }
     />
   );
 }

@@ -3,7 +3,12 @@ import Table from "react-bootstrap/Table";
 import BagRow from "./BagRow";
 import { useState, useEffect } from "react";
 
-function BagTable({ bags, pickupBag = () => {}, selectCurrentBag = () => {} }) {
+function BagTable({
+  bags,
+  deliverBag = () => {},
+  pickupBag = () => {},
+  selectCurrentBag = () => {},
+}) {
   const [selectedRow, setSelectedRow] = useState();
 
   function handleSelectCurrentBag(id) {
@@ -28,12 +33,16 @@ function BagTable({ bags, pickupBag = () => {}, selectCurrentBag = () => {} }) {
             <th>Destination</th>
             <th>Current</th>
             <th>Delivered</th>
+            <th>Pickup Bag</th>
+            <th>Deliver</th>
           </tr>
         </thead>
         <tbody>
           {bags.map((bag, i) => {
             return (
               <BagRow
+                deliverBag={deliverBag}
+                pickupBag={pickupBag}
                 selectedRow={selectedRow}
                 key={i}
                 bag={bag}

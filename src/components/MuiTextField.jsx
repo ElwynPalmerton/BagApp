@@ -39,8 +39,8 @@ function MuiInputField({ text, name, inputValue, handleInputChange }) {
           },
         },
       }}
-      id="standard-basic"
-      variant="standard"
+      id="outlined-basic"
+      variant="outlined"
       disableAnimation={true}
     />
   );

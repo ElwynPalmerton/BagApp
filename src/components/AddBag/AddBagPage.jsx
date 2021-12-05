@@ -47,7 +47,7 @@ function AddBagPage({ addBag, bags }) {
           <Container>
             <h1 className="sourceFont">Add Task</h1>
           </Container>
-          <AddBagForm addBag={addBag} showNewBagToast={showNewBagToast} />
+          <MuiAddBagForm addBag={addBag} showNewBagToast={showNewBagToast} />
           {/* <BagTable bags={bags} /> */}
           {/* <Button onClick={toggleShowToast} className="mb-2">
             Toggle Toast <strong>with</strong> Animation
